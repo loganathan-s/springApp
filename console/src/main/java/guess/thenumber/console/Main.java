@@ -33,26 +33,26 @@ public class Main {
 		//	= context.getBean("numberGenerator", NumberGenerator.class);
 
 		// Instead of name we can get the bean by its type
-		NumberGenerator numberGenerator
-			= context.getBean( NumberGenerator.class);
+//		NumberGenerator numberGenerator
+//			= context.getBean( NumberGenerator.class);
 
 		//call method next() to get random number
 
-		int number = numberGenerator.next();
+//		int number = numberGenerator.next();
 
-		log.info("number = {}", number);
+//		log.info("number = {}", number);
 
 
 		// get game bean from context(container)
-		Game game = context.getBean(Game.class);
+//		Game game = context.getBean(Game.class);
 
 		//call reset method
 		//game.reset();
 		// get message generator bean from context (container)
-		MessageGenerator messageGenerator =
-			context.getBean(MessageGenerator.class);
-		log.info("getMainMessage= {}", messageGenerator.getMainMessage());
-		log.info("getResultMessage= {}", messageGenerator.getResultMessage());
+//		MessageGenerator messageGenerator =
+//			context.getBean(MessageGenerator.class);
+//		log.info("getMainMessage= {}", messageGenerator.getMainMessage());
+//		log.info("getResultMessage= {}", messageGenerator.getResultMessage());
 
 		//close context
 		context.close();
