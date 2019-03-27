@@ -1,4 +1,4 @@
-package academy.learnprogramming;
+package guess.thenumber;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package academy.learnprogramming;
+package guess.thenumber;
 
 public interface NumberGenerator {
 

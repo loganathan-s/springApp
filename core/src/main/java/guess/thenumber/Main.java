@@ -1,4 +1,4 @@
-package academy.learnprogramming;
+package guess.thenumber;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +26,12 @@ public class Main {
 		int number = numberGenerator.next();
 
 		log.info("number = {}", number);
+
+		// get game bean from context(container)
+		Game game = context.getBean(Game.class);
+
+		//call reset method
+		game.reset();
 
 		//close context
 		context.close();

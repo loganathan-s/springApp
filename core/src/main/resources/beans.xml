@@ -4,5 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="numberGenerator" class="academy.learnprogramming.NumberGeneratorImpl" />
+    <bean id="numberGenerator" class="guess.thenumber.NumberGeneratorImpl" />
+    <bean id="game" class="guess.thenumber.GameImpl" >
+       <!-- Constructor based dependency injection -->
+       <!-- <constructor-arg ref="numberGenerator"/> -->
+        <!-- Setter based dependency injection -->
+        <!-- name="numberGenerator" -> Name of the property in the class -->
+        <property name="numberGenerator" ref="numberGenerator"/>
+
+    </bean>
 </beans>
