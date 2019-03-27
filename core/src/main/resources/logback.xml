@@ -4,7 +4,7 @@
             <pattern>%date [%thread] [%-5level] %logger{40} -%message%n</pattern>
         </encoder>
     </appender>
-    <logger name="guess.thenumber" level="DEBUG"/>
+    <logger name="guess.thenumber" level="TRACE"/>
     <logger name="org.springframework" level="TRACE"/>
     <root level="INFO">
         <appender-ref ref="STDOUT" />
