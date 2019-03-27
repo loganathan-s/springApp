@@ -1,4 +1,4 @@
-package guess.thenumber;
+package guess.thenumber.core;
 
 public interface Game {
 

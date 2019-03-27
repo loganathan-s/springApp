@@ -5,7 +5,7 @@
         </encoder>
     </appender>
     <logger name="guess.thenumber" level="DEBUG"/>
-    <logger name="org.springframework" level="DEBUG"/>
+    <logger name="org.springframework" level="TRACE"/>
     <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>

@@ -1,14 +1,20 @@
-package guess.thenumber;
+package guess.thenumber.core;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+//@Component
 public class GameImpl implements Game {
 
 	//== constants ==
 	private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
 
 	//== fields ==
+	@Autowired //Class will be initated by the spring  container, no need to initialize manually
 	private NumberGenerator numberGenerator;
 	private int guessCount = 10;
 	private int number;
@@ -22,11 +28,9 @@ public class GameImpl implements Game {
 //		this.numberGenerator = numberGenerator;
 //	}
 
-	//== public methods ==
-	public void setNumberGenerator(NumberGenerator numberGenerator) {
-		this.numberGenerator = numberGenerator;
-	}
+	// == init ==
 
+	@PostConstruct
 	@Override
 	public void reset () {
 		smallest = 0;
@@ -36,6 +40,16 @@ public class GameImpl implements Game {
 		number = numberGenerator.next();
 		log.debug("the number is {}", number);
 	}
+
+	@PreDestroy
+	public void preDestroy() {
+		log.debug("pre destroy called");
+	}
+
+	//== public methods ==
+//	public void setNumberGenerator(NumberGenerator numberGenerator) {
+//		this.numberGenerator = numberGenerator;
+//	}
 
 	@Override
 	public int getNumber () {

@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="numberGenerator" class="guess.thenumber.NumberGeneratorImpl" />
-    <bean id="game" class="guess.thenumber.GameImpl" >
+    <!--This will scan beans in the given package so we can comment the beans -->
+
+    <context:component-scan base-package="guess.thenumber" />
+
+    <!--<bean id="numberGenerator" class="guess.thenumber.NumberGeneratorImpl"/>-->
+
+    <!--<bean id="game" class="guess.thenumber.GameImpl" init-method="reset"> -->
+    <!-- init-method="reset" -> callback when bean is created> -->
+    <!--<bean id="game" class="guess.thenumber.GameImpl">-->
        <!-- Constructor based dependency injection -->
        <!-- <constructor-arg ref="numberGenerator"/> -->
         <!-- Setter based dependency injection -->
         <!-- name="numberGenerator" -> Name of the property in the class -->
-        <property name="numberGenerator" ref="numberGenerator"/>
+    <!--  <property name="numberGenerator" ref="numberGenerator"/> -->
 
-    </bean>
+<!--</bean>-->
+
+<!-- Used for init-method and destroy annotations(postconstruct & predestroy)   -->
+   <!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> -->
+   <!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> -->
 </beans>

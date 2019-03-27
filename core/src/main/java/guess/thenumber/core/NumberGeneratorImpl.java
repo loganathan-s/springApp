@@ -1,7 +1,12 @@
-package guess.thenumber;
+package guess.thenumber.core;
 
 import java.util.Random;
 
+//  XMl way (bean.xml)
+//<bean id="numberGenerator" class="guess.thenumber.NumberGeneratorImpl"/>
+
+// == Annotation way
+//@Component("numberGenerator")
 public class NumberGeneratorImpl implements NumberGenerator {
 
 	//== fields ==
