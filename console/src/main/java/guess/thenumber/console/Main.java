@@ -1,6 +1,6 @@
 package guess.thenumber.console;
 
-import guess.thenumber.core.AppConfig;
+import guess.thenumber.core.config.AppConfig;
 import guess.thenumber.core.Game;
 import guess.thenumber.core.MessageGenerator;
 import guess.thenumber.core.NumberGenerator;

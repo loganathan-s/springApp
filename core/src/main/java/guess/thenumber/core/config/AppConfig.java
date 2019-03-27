@@ -1,8 +1,10 @@
-package guess.thenumber.core;
+package guess.thenumber.core.config;
 
+import guess.thenumber.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 
 //  XMl way (bean.xml)
@@ -10,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 // == Annotation way
 @Configuration
+@Import(GameConfig.class)
 @ComponentScan(basePackages = "guess.thenumber")
 public class AppConfig {
 

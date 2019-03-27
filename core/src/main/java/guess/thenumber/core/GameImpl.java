@@ -16,7 +16,10 @@ public class GameImpl implements Game {
 	//== fields ==
 	@Autowired //Class will be initated by the spring  container, no need to initialize manually
 	private NumberGenerator numberGenerator;
-	private int guessCount = 10;
+
+	@Autowired
+	@GuessCount
+	private int guessCount;
 	private int number;
 	private int guess;
 	private int smallest;
@@ -112,6 +115,11 @@ public class GameImpl implements Game {
 	@Override
 	public boolean isGameLost () {
 		return !isGameWon() && remainingGuesses <= 0;
+	}
+
+	@Override
+	public int getGuessCount () {
+		return 10;
 	}
 
 	// == private methods ==
